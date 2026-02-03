@@ -9,4 +9,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # run tests
-python3 -m pytest ./tests.py
+RUN python -m pytest ./tests.py
