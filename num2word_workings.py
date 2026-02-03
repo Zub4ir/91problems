@@ -11,7 +11,7 @@ def num2word(s: str = 'Example 1234'):
 
     return 'Hello World'
 
-s = 'The pump is 536 deep undergroun'
+s = 'Example R82'
 
 # numbers meta data
 dict_numbers = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', 11: 'eleven', 12: 'twelve', 13: 'thirteen', 14: 'fourteen', 15: 'fifteen', 16: 'sixteen', 17: 'seventeen', 18: 'eighteen', 19: 'nineteen', 20: 'twenty', 21: 'twenty-one', 22: 'twenty-two', 23: 'twenty-three', 24: 'twenty-four', 25: 'twenty-five', 26: 'twenty-six', 27: 'twenty-seven', 28: 'twenty-eight', 29: 'twenty-nine', 30: 'thirty', 31: 'thirty-one', 32: 'thirty-two', 33: 'thirty-three', 34: 'thirty-four', 35: 'thirty-five', 36: 'thirty-six', 37: 'thirty-seven', 38: 'thirty-eight', 39: 'thirty-nine', 40: 'forty', 41: 'forty-one', 42: 'forty-two', 43: 'forty-three', 44: 'forty-four', 45: 'forty-five', 46: 'forty-six', 47: 'forty-seven', 48: 'forty-eight', 49: 'forty-nine', 50: 'fifty',
@@ -21,19 +21,20 @@ dict_numbers = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 
 dict_seperator = {0: '', 1: 'thousand', 2: 'million', 3: 'billion', 4: 'trillion'}
 
 # strip, fix up later
-list_numbers = re.findall(pattern=r'(?<![#$\w])\d+(?![#$\w])', string=s)
+list_numbers = re.findall(pattern=r'(\d+)', string=s)
 list_numbers
 
-# only one number 
+# final check
 if len(list_numbers) != 1:
 
     print('number invalid')
     sys.exit(0)
 
-# very first check, is this number 0, 00, or 000...
+# %%
 
 # create groups of 3
 num_str = str(list_numbers[0])
+num_str = str('9121') # 10,110,009
 dict_pockets = {}
 
 # start from the right, group in threes
@@ -91,7 +92,7 @@ for i in ll:
     list_result_pockets.append(result_pocket)
     print(result_pocket)
 
-if 'and' in list_result_pockets[-1].split(' ') or len(list_result_pockets) == 1:
+if 'and' in list_result_pockets[-1].split(' '):
 
     result = ', '.join(list_result_pockets)
 
