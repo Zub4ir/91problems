@@ -27,7 +27,7 @@ python3 num2word.py 'Hello 123'
 
 # string parsed from a file
 python3 num2word.py --file mytext.txt            
-five hundred and thirty-six
+>>> five hundred and thirty-six
 ```
 The function can also be imported from the file.
 
