@@ -1,6 +1,6 @@
 # Problem 91: "num2word"
 
-The task is to create a funtion finds a digit in a string and converts it to its word representation.
+The task is to create a funtion finds a digit in a string and convert it to its word representation.
 
 ## Method
 
@@ -18,11 +18,16 @@ Quadrillion and higher can follow the same pattern.
 
 ## Project Setup
 
-The usage of the funtion is in a python script that can be run as standalone script in command line using command line input or a file.
+The usage of the funtion is in a python script that can be run as a standalone script in command line using command line input or a file.
 
 ```bash
+# string parsed as arg
 python3 num2word.py 'Hello 123'
 >>> one hundred and twenty-three
+
+# string parsed from a file
+python3 num2word.py --file mytext.txt            
+five hundred and thirty-six
 ```
 The function can also be imported from the file.
 
@@ -36,11 +41,14 @@ print(num2word('100'))
 
 The project has a simple worflow with some baseline and edge cases testing attached on any push or PR to the main branch. This will flag any modification to the function that breaks functionality and will always be tested.
 
+The results of the testing can be viewed here `https://github.com/Zub4ir/problem-91/actions`.
+
 The tests run a Docker Container to standardise the testing environment.
 
 ## Idea Project Setup
 
-1. This function forms part of a Module.
-2. The repo workflow contains security, linting and test pipelines.
-3. The repo workflow deploys the Module.
-4. If need, the user functionality is explosed in a web app.
+1. The repo has dev, uat and prod environments.
+2. This function forms part of a Module.
+3. The repo workflow contains security, linting and test pipelines.
+4. The repo workflow deploys the Module.
+5. If need, the user functionality is explosed in a web app.
